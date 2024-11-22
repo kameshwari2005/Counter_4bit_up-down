@@ -1,70 +1,55 @@
-# Exp-No:2 - BIT Up-Down Counter - Write Verilog Code and Verify the Functionality using Test-bench ( Using Frontend tool - nclaunch in cadence).
+# EXP2:Counter_4bit_up-down
 
-**Aim:** <br>
-<br>
-&emsp;&emsp;To write a verilog code for 4bit up/down counter and verify the functionality using Test bench.<br>
-<br>
+## Aim:
 
-**Tools used for ASIC Flow:** <br>
-<br>
-&emsp;&emsp;nclaunch- Used for Functional Simulation<br>
-<br>
+To write a verilog code for 4bit up/down counter and verify the functionality using Test bench. 
 
-**Design Information and Bock Diagram:** <br>
-<br>
-&emsp;&emsp;An up/down counter is a digital counter which can be set to count either from 0 to MAX_VALUE or MAX_VALUE to 0.<br>
+## Tools used for ASIC Flow:
 
-&emsp;&emsp;The direction of the count(mode) is selected using a single bit input. The module has 3 inputs - clk, reset which is active high and a Up Or Down mode input.The output is Counter which is 4 bit in size.<br>
+1.	nclaunch- Used for Functional Simulation
+   
+## Design Information and Bock Diagram:
 
-&emsp;&emsp;When Up mode is selected, counter counts from 0 to 15 and then again from 0 to 15.<br>
+	An up/down counter is a digital counter which can be set to count either from 0 to
+MAX_VALUE or MAX_VALUE to 0.
 
-&emsp;&emsp;When Down mode is selected, counter counts from 15 to 0 and then again from 15 to 0.<br>
+	The direction of the count(mode) is selected using a single bit input. The module has 3 inputs - clk, reset which is active high and a Up Or Down mode input. 
+The output is Counter which is 4 bit in size.
 
-&emsp;&emsp;Changing mode doesn't reset the Count value to zero.<br>
+	When Up mode is selected, counter counts from 0 to 15 and then again from 0 to 15.
 
-&emsp;&emsp;You have to apply high value to reset, to reset the Counter output.<br>
-<br>
+	When Down mode is selected, counter counts from 15 to 0 and then again from 15 to 0.
 
+	Changing mode doesn't reset the Count value to zero.
+
+	You have to apply high value to reset, to reset the Counter output.
+ 
 ![image](https://github.com/user-attachments/assets/efe1095e-989e-4005-b53b-e9dc50d4025c)
-<br>
 
-**<p align="center">Fig 1: 4 Bit Up/Down Counter** <br>
+## Fig 1: 4 Bit Up/Down Counter
 
-<br>
+## Creating a Work space :
 
-**Creating a Work space :** <br>
-<br>
-&emsp;&emsp;Create a folder in your name (Note: Give folder name without any space) and Create a new sub-Directory name it as Exp2 or counter_design for the Design and open a terminal from the Sub-Directory. <br>
-<br>
+	Create a folder in your name (Note: Give folder name without any space) and Create a new sub-Directory name it as Exp2 or counter_design for the Design and open a terminal from the Sub-Directory.
+Functional Simulation: 
 
-**Functional Simulation:** <br>
-<br>
-&emsp;&emsp;Invoke the cadence environment by type the below commands <br>
+	Invoke the cadence environment by type the below commands 
 
-&emsp;&emsp;tcsh (Invokes C-Shell) <br>
+	tcsh (Invokes C-Shell) 
 
-&emsp;&emsp;source /cadence/install/cshrc (mention the path of the tools) <br>
-
-&emsp;&emsp;(The path of cshrc could vary depending on the installation destination)<br>
+	source /cadence/install/cshrc (mention the path of the tools) 
+      (The path of cshrc could vary depending on the installation destination)
       
-&emsp;&emsp;After this you can see the window like below <br>
-<br>
-![Picture8](https://github.com/user-attachments/assets/dcc1bb24-5e2d-4f1b-96d0-f410f4f2b0c1)
+	After this you can see the window like below 
 
-<br>
 
-**<p align="center">Fig 2: Invoke the Cadence Environment** <br>
+## Creating Source Code:
 
-<br>
+	In the Terminal, type gedit <filename>.v or <filename>.vhdl depending on the HDL Language you are to use (ex: 4b_up_downCount.v).
 
-**Creating Source Code:** <br>
-<br>
-&emsp;&emsp;In the Terminal, type gedit <filename>.v or <filename>.vhdl depending on the HDL Language you are to use (ex: 4b_up_downCount.v).<br>
+	A Blank Document opens up into which the following source code can be typed down.
 
-&emsp;&emsp;A Blank Document opens up into which the following source code can be typed down.<br>
-
-&emsp;&emsp;(Note : File name should be with HDL Extension)<br>
-<br>
+(Note : File name should be with HDL Extension)
 
 **Verilog code for 4-Bit Up-Down Counter:**
 ```
@@ -114,168 +99,132 @@ endmodule
 
 ```
 
-**To Launch Simulation tool** <br>
-<br>
-&emsp;&emsp;linux:/> nclaunch -new&            // “-new” option is used for invoking NCVERILOG for the first time for any design<br>
+	Use Save option or Ctrl+S to save the code or click on the save option from the top most right corner and close the text file.
 
-&emsp;&emsp;linux:/> nclaunch&                 // On subsequent calls to NCVERILOG<br>
+## Creating Test bench:
 
-&emsp;&emsp;It will invoke the nclaunch window for functional simulation we can compile,elaborate and simulate it using Multiple step<br>
-<br>
+	Similarly, create your test bench using gedit <filename_tb>.v or <filename_tb>.vhdl to open a new blank document (4bitup_down_count_tb.v).
 
-![Picture9](https://github.com/user-attachments/assets/29ee2e8a-792b-4c3f-a1ab-893d4a330563)
+### Test-bench code for 4-Bit Up-Down Counter:
 
-<br>
+*/Test bench Program  for  4-Bit Up-Down Counter
 
-**<p align="center">Fig 3: Setting Multi-step simulation** <br>
+### To Launch Simulation tool
+	linux:/> nclaunch -new&            // “-new” option is used for invoking NCVERILOG for the first time for any design
 
-<br>
-&emsp;&emsp;Select Multiple Step and then select “Create cds.lib File” as shown in below figure<br>
+	linux:/> nclaunch&                 // On subsequent calls to NCVERILOG
 
-&emsp;&emsp;Click the cds.lib file and save the file by clicking on Save option<br>
-<br>
+It will invoke the nclaunch window for functional simulation we can compile,elaborate and simulate it using Multiple step
 
-![Screenshot 2024-10-05 093852](https://github.com/user-attachments/assets/91ad3198-0259-4aee-8cad-88454481ac20)
+<img width="950" alt="exp1 1" src="https://github.com/user-attachments/assets/0e177ce3-5229-4c1e-9b8f-7005cf3c0601">
 
-<br>
+## Fig 3: Setting Multi-step simulation
 
-**<p align="center">Fig 4: cds.lib file Creation** <br>
+Select Multiple Step and then select “Create cds.lib File” as shown in below figure
 
-<br>
-&emsp;&emsp;Save cds.lib file and select the correct option for cds.lib file format based on the  HDL Language and Libraries used.<br>
+Click the cds.lib file and save the file by clicking on Save option
 
-&emsp;&emsp;Select “Don’t include any libraries (verilog design)” from “New cds.lib file” and click on “OK” as in below figure<br>
+<img width="952" alt="exp1 2" src="https://github.com/user-attachments/assets/a3b95556-b397-4917-bae8-2648014cee45">
 
-&emsp;&emsp;We are simulating verilog design without using any libraries<br>
-<br>
+## Fig 4: cds.lib file Creation
 
-![Screenshot 2024-10-05 093943](https://github.com/user-attachments/assets/73f0d852-861a-49b0-9ee9-dcdc79ab8686)
+	Save cds.lib file and select the correct option for cds.lib file format based on the  HDL Language and Libraries used.
 
-<br>
+	Select “Don’t include any libraries (verilog design)” from “New cds.lib file” and click on “OK” as in below figure
 
-**<p align="center">Fig 5: Selection of Don’t include any libraries** <br>
+	We are simulating verilog design without using any libraries
+![image](https://github.com/user-attachments/assets/ded55134-4ff5-4a24-a9cb-da1e193e777d)
 
-<br>
-&emsp;&emsp;A Click “OK” in the “nclaunch: Open Design Directory” window<br>
+## Fig 5: Selection of Don’t include any libraries
 
-&emsp;&emsp;A ‘NCLaunch window’ appears as shown in figure below<br>
+	A Click “OK” in the “nclaunch: Open Design Directory” window
 
-&emsp;&emsp;Left side you can see the HDL files. Right side of the window has worklib and snapshots directories listed.<br>
+	A ‘NCLaunch window’ appears as shown in figure below
 
-&emsp;&emsp;Worklib is the directory where all the compiled codes are stored while Snapshot will have output of elaboration which in turn goes for simulation<br>
-<br>
+	Left side you can see the HDL files. Right side of the window has worklib and snapshots directories listed.
 
-![Screenshot 2024-10-05 094118](https://github.com/user-attachments/assets/d0abc092-b47c-4f5c-937d-6d4c41e96ee6)
+	Worklib is the directory where all the compiled codes are stored while Snapshot will have output of elaboration which in turn goes for simulation
 
-<br>
+<img width="959" alt="exp2 1" src="https://github.com/user-attachments/assets/0a7f799e-0784-4ca6-a946-221c551c33c9">
 
-**<p align="center">Fig 6: Nclaunch Window** <br>
+## Fig 6: Nclaunch Window
 
-<br>
-&emsp;&emsp;To perform the function simulation, the following three steps are involved Compilation, Elaboration and Simulation.<br>
-<br>
+To perform the function simulation, the following three steps are involved Compilation, Elaboration and Simulation.
 
-**Step 1: Compilation:– Process to check the correct Verilog language syntax and usage**  <br>
-<br>
-&emsp;&emsp;Inputs: Supplied are Verilog design and test bench codes <br>
+## Step 1: Compilation:– Process to check the correct Verilog language syntax and usage 
 
-&emsp;&emsp;Outputs: Compiled database created in mapped library if successful, generates report else error reported in log file <br>
-<br> 
+	Inputs: Supplied are Verilog design and test bench codes 
 
-**Steps for compilation:** <br>
+	Outputs: Compiled database created in mapped library if successful, generates report else error reported in log file 
 
-&emsp;&emsp;1. Create work/library directory (most of the latest simulation tools creates automatically)<br>
+## Steps for compilation:
+
+1. Create work/library directory (most of the latest simulation tools creates automatically)
   
-&emsp;&emsp;2. Map the work to library created (most of the latest simulation tools creates automatically)<br>
+2. Map the work to library created (most of the latest simulation tools creates automatically)
   
-&emsp;&emsp;3. Run the compile command with compile options<br>
+3. Run the compile command with compile options
 
-&emsp;&emsp;i.e Cadence IES command for compile: ncverilog +access+rwc -compile fa.v<br>
+i.e Cadence IES command for compile: ncverilog +access+rwc -compile fa.v
 
-&emsp;&emsp;Left side select the file and in Tools : launch verilog compiler with current selection will get enable. Click it to compile the code <br>
+Left side select the file and in Tools : launch verilog compiler with current selection will get enable. Click it to compile the code 
 
-&emsp;&emsp;Worklib is the directory where all the compiled codes are stored while Snapshot will have output of elaboration which in turn goes for simulation <br>
-<br>
+Worklib is the directory where all the compiled codes are stored while Snapshot will have output of elaboration which in turn goes for simulation 
 
-![Screenshot 2024-10-05 094320](https://github.com/user-attachments/assets/f32e8576-f202-48bf-9ca6-8c90e008bad6)
+<img width="959" alt="exp2 2" src="https://github.com/user-attachments/assets/2e8fd8a3-34e4-4d34-9722-c8f97bf3928e">
 
-<br>
+## Fig 7: Compiled database in worklib
 
-**<p align="center">Fig 7: Compiled database in worklib** <br>
+	After compilation it will come under worklib you can see in right side window
 
-<br>
-&emsp;&emsp;After compilation it will come under worklib you can see in right side window<br>
+	Select the test bench and compile it. It will come under worklib. Under Worklib you can see the module and test-bench. 
 
-&emsp;&emsp;Select the test bench and compile it. It will come under worklib. Under Worklib you can see the module and test-bench. <br>
+	The cds.lib file is an ASCII text file. It defines which libraries are accessible and where they are located.
+It contains statements that map logical library names to their physical directory paths. For this Design, you will define a library called “worklib”
 
-&emsp;&emsp;The cds.lib file is an ASCII text file. It defines which libraries are accessible and where they are located.<br>
+## Step 2: Elaboration:– To check the port connections in hierarchical design 
 
-&emsp;&emsp;It contains statements that map logical library names to their physical directory paths. For this Design, you will define a library called “worklib”<br>
-<br>
+	Inputs: Top level design / test bench Verilog codes
 
-**Step 2: Elaboration:– To check the port connections in hierarchical design**  <br>
-<br>
-&emsp;&emsp;Inputs: Top level design / test bench Verilog codes<br>
+	Outputs: Elaborate database updated in mapped library if successful, generates report else error reported in log file 
 
-&emsp;&emsp;Outputs: Elaborate database updated in mapped library if successful, generates report else error reported in log file <br>
+	Steps for elaboration – Run the elaboration command with elaborate options 
 
-&emsp;&emsp;Steps for elaboration – Run the elaboration command with elaborate options <br>
-
-&emsp;&emsp;It builds the module hierarchy<br>
+1.	It builds the module hierarchy
 	
-&emsp;&emsp;Binds modules to module instances<br>
+3.	Binds modules to module instances
   
-&emsp;&emsp;Computes parameter values<br>
+5.	Computes parameter values
   
-&emsp;&emsp;Checks for hierarchical names conflicts<br>
+7.	Checks for hierarchical names conflicts
   
-&emsp;&emsp;It also establishes net connectivity and prepares all of this for simulation<br>
+9.	It also establishes net connectivity and prepares all of this for simulation
     
-&emsp;&emsp;After elaboration the file will come under snapshot. Select the test bench and simulate it. <br>
-<br>
-![Screenshot 2024-10-05 094356](https://github.com/user-attachments/assets/e9ccbae6-b490-400a-825c-a6f5f08ed60c)
+	After elaboration the file will come under snapshot. Select the test bench and simulate it.
 
-<br>
+<img width="959" alt="exp2 2" src="https://github.com/user-attachments/assets/0e53d392-d128-494a-94ae-7f17b10961fa">
 
-**<p align="center">Fig 8: Elaboration Launch Option** <br>
+## Fig 8: Elaboration Launch Option
 
-<br>
+### Step 3: Simulation: – Simulate with the given test vectors over a period of time to observe the output behaviour. 
 
-**Step 3: Simulation: – Simulate with the given test vectors over a period of time to observe the output behaviour.** <br> 
-<br>
-&emsp;&emsp;Inputs: Compiled and Elaborated top level module name <br>
+	Inputs: Compiled and Elaborated top level module name 
 
-&emsp;&emsp;Outputs: Simulation log file, waveforms for debugging <br>
+	Outputs: Simulation log file, waveforms for debugging 
 
-&emsp;&emsp;Simulation allow to dump design and test bench signals into a waveform <br>
+	Simulation allow to dump design and test bench signals into a waveform 
 
-&emsp;&emsp;Steps for simulation – Run the simulation command with simulator options<br>
-<br>
+	Steps for simulation – Run the simulation command with simulator options
 
-![Picture4](https://github.com/user-attachments/assets/e10f0858-6a89-4652-a2ca-71dd3cf9b395)
+![image](https://github.com/user-attachments/assets/56b336b8-f559-432d-9a6a-3bc958df1cc0)
 
-<br>
+## Fig 9: Design Browser window for simulation
 
-**<p align="center">Fig 9: Design Browser window for simulation** <br>
+![image](https://github.com/user-attachments/assets/0e16d274-a1f3-456d-ba64-6f05446b5ab3)
 
-<br>
+## Fig 10: Simulation Waveform Window
 
-![Picture5](https://github.com/user-attachments/assets/7e1b075a-01ce-42c1-9c2d-2635539a9696)
 
-<br>
+### Result
 
-**<p align="center">Fig 10: Simulation Waveform Window** <br>
-
-<br>
-
-![Picture7](https://github.com/user-attachments/assets/eb068722-97fa-4a8d-9318-e61795c165e2)
-
-<br>
-
-**<p align="center">Fig 11: Simulation Waveform Window** <br>
-
-<br>
-
-**Result:** <br>
-<br>
-&emsp;&emsp;The functionality of a 4bit_up-down asynchronous reset Counter was successfully verified using a test bench and simulated with the nclaunch tool.
+The functionality of a 4bit_up-down asynchronous reset Counter was successfully verified using a test bench and simulated with the nclaunch tool.
